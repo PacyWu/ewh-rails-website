@@ -15,3 +15,10 @@
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require_tree .
+
+$(function(event){
+	$('.nav-btn').on('click', function(){
+		$(this).toggleClass('active');
+		$('.main-nav').toggleClass('open');
+	});
+});
