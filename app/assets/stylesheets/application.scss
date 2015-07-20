@@ -1,0 +1,112 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require shared/bootstrap-base
+ *= require_tree .
+ *= require_self
+ */
+
+
+/* =========================
+	Reset & Basic settings
+   ========================= */
+
+* {
+	padding: 0;
+	margin: 0;
+}
+
+ul,
+ol {
+	list-style: none;
+}
+
+a {
+	&:link,
+	&:hover,
+	&:active,
+	&:visited {
+		text-decoration: none;
+		color: inherit;	
+	}
+}
+
+body {
+	font-family: Helvetica, '微軟正黑體', Arial, serif;
+	background-color: #fff;
+}
+
+
+/* =========================
+	Mixins
+   ========================= */
+
+/* Breakpoint mixin (Desktop first) */
+@mixin breakpoint($point) {
+	@if $point == desktop {
+		@media (min-width: 1200px) { @content ; }
+	}
+	@else if $point == laptop {
+		@media (max-width: 1199px) { @content ; }
+	}
+	@else if $point == tablet {
+		@media (max-width: 991px) { @content ; }
+	}
+	@else if $point == phablet {
+		@media (max-width: 767px)  { @content ; }
+	}
+	@else if $point == mobileonly {
+		@media (max-width: 567px)  { @content ; }
+	}
+}
+
+
+/* =========================
+	Helper classes
+   ========================= */
+
+.bold {
+	font-weight: bold;
+}
+
+
+/* =========================
+	Layout
+   ========================= */
+
+/* header */
+.logo {
+	float: left;
+	height: 100px;
+	img {
+		height: 100%;
+	}
+	@include breakpoint(phablet) {
+		height: 70px;
+	}
+}
+
+.header-title {
+	.sub-title {
+		@include breakpoint(phablet) {
+			font-size: 30px;	// h2
+		}
+		@include breakpoint(mobileonly) {
+			display: none;
+		}
+	}
+	span {
+		@include breakpoint(mobileonly) {
+			font-size: 30px;
+		}
+	}
+}
