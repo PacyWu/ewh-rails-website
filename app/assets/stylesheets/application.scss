@@ -46,6 +46,18 @@ $primary-color: #95caa0;
 	}
 }
 
+/* Word-break */
+@mixin wordbreak($option) {
+	@if $option == never {
+		white-space: nowrap;
+	}
+	@else if $option == break {
+		word-break: break-all;
+		word-break: break-word;
+		word-wrap: break-word;
+	}
+}
+
 
 /* =========================
 	Reset & Basic settings
@@ -86,7 +98,9 @@ body {
 	}
 }
 
-
+.main {
+	min-height: 50vh;
+}
 
 
 /* =========================
@@ -115,6 +129,7 @@ body {
 }
 
 .header-title {
+	@include wordbreak(never);
 	.sub-title {
 		@include breakpoint(phablet) {
 			font-size: 30px;	// h2
@@ -134,6 +149,7 @@ body {
 .main-nav {
 	background-color: $bg-color;
 	font-size: 0;
+	z-index: 998;
 	.nav-list {
 		margin: 0; // 覆寫 bootstrap
 	}
@@ -214,5 +230,58 @@ body {
 		.icon-bar:last-child {
 			transform: rotate(-405deg) translate3d(6px, -6px, 0px);
 		}
+	}
+}
+
+/* footer */
+.page-footer {
+	.contact-info {
+		background-color: #fff;
+		padding: 30px 0;
+		.logo {
+			height: 70px;
+		}
+		.footer-title {
+			margin: 0;
+			padding: 15px 0 30px;
+			line-height: 40px;
+			@include wordbreak(never);
+			@include breakpoint(mobileonly) {
+				.sub-title {
+					font-size: 0;
+				}
+			}
+		}
+		ul {
+			line-height: 2;
+			i {
+				font-size: 24px;
+				min-width: 32px;
+				text-align: center;
+			}
+			span {
+				@include breakpoint(mobileonly) {
+					font-size: 0;
+				}
+			}
+		}
+		.share-icon {
+			font-size: 48px;
+			.fa-facebook-official {
+				color: #46629e;
+			}
+			.fa-github {
+				color: #000;
+			}
+			:hover {
+				color: $primary-color;
+			}
+		}
+	}
+	.copy-right {
+		background-color: $bg-color;
+		color: $font-color;
+		border-top: 1px solid lighten($bg-color, 60);
+		padding: 20px 0;
 	}
 }
