@@ -22,13 +22,30 @@ $(function(event){
 		$(this).toggleClass('active');
 		$('.main-nav').toggleClass('open');
 	});
-});
 
-/* embad Facebook */
-$(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v2.4";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));
+
+	/* embad Facebook */
+	$(function(d, s, id) {
+	  var js, fjs = d.getElementsByTagName(s)[0];
+	  if (d.getElementById(id)) return;
+	  js = d.createElement(s); js.id = id;
+	  js.src = "//connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v2.4";
+	  fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));
+
+	/* totop button toggle */
+	$(window).scroll(function(){
+		if ($(this).scrollTop() > 100) {
+			$('.totop').fadeIn("slow");
+		} else {
+			$('.totop').fadeOut("slow");
+		}
+	});
+
+	/* click event to scroll to top */
+	$('.totop').click(function(){
+		$('html, body').animate({scrollTop : 0},800);
+		return false;
+	});
+
+});
