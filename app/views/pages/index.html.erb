@@ -1,3 +1,148 @@
 <%= content_for :page_title do %>
 	<% title = '首頁' %>
 <% end %>
+
+<section class="activity">
+	<div class="container">
+		<h1 class="text-center  section-title">近期活動</h1>
+		<div class="carousel">
+			<div class="slide">
+				<article class="col-sm-6">
+					<a href="/" class="l-tag">
+						<div class="l-img">
+							<%= image_tag 'http://ewhcycu.org/images/activities/lectures/nepal/cover.jpg' %>
+							<div class="mask"></div>
+						</div>
+						<div class="time  text-right">
+							<div class="date  h1">06/10</div>
+							<div class="year  h4">2015</div>
+						</div>
+					</a>
+					<div class="l-content">
+						<h1 class="h4  text-center  title"><%= link_to '國際講座 謎樣國度尼泊爾', root_path %></h1>
+						<p>認識尼泊爾。探討尼泊爾當地公共衛生、基礎建設、教育資源的情況。思考個人能給予世界的回饋有哪些。</p>
+					</div>
+				</article>
+				<article class="col-sm-6">
+					<a href="/" class="l-tag">
+						<div class="l-img">
+							<%= image_tag 'http://ewhcycu.org/images/activities/camps/butterflyeffect/cover.jpg' %>
+							<div class="mask"></div>
+						</div>
+						<div class="time  text-right">
+							<div class="date  h1">02/02</div>
+							<div class="year  h4">2015</div>
+						</div>
+					</a>
+					<div class="l-content">
+						<h1 class="h4  text-center  title"><%= link_to ' 小蝴蝶效應營隊', root_path %></h1>
+						<p>EWH 致力於給弱勢地區提供幫助，不僅致力於專業醫療知識上及技能上的發揮，在台灣，我們也不能忽視未來的主人翁，給予偏遠地區的孩童，提供一個免費的營隊，藉此營隊不僅帶給他們美好的回憶，更希望藉各種科學、美術、遊戲，使他們發揮小小的力量，將所學和身邊的人分享。</p>
+					</div>
+				</article>
+			</div>
+			<div class="slide">
+				<article class="col-sm-6">
+					<a href="/" class="l-tag">
+						<div class="l-img">
+							<%= image_tag 'http://ewhcycu.org/images/activities/lectures/linktheworld/cover.jpg' %>
+							<div class="mask"></div>
+						</div>
+						<div class="time  text-right">
+							<div class="date  h1">04/16</div>
+							<div class="year  h4">2015</div>
+						</div>
+					</a>
+					<div class="l-content">
+						<h1 class="h4  text-center  title"><%= link_to '世界接軌國際講座', root_path %></h1>
+						<p>提升同學們對於國外環境的認識及促進彼此間的交流。</p>
+					</div>
+				</article>
+				<article class="col-sm-6">
+					<a href="/" class="l-tag">
+						<div class="l-img">
+							<%= image_tag 'http://ewhcycu.org/images/activities/courses/designspark/cover.jpg' %>
+							<div class="mask"></div>
+						</div>
+						<div class="time  text-right">
+							<div class="date  h1">04/10</div>
+							<div class="year  h4">2014</div>
+						</div>
+					</a>
+					<div class="l-content">
+						<h1 class="h4  text-center  title"><%= link_to 'Design Spark', root_path %></h1>
+						<p>在醫工系的學習主科上經常接觸到電路的架構圖及計算，但從未思考過該如何製作一塊電路板或一張電路圖，我們藉由軟體設計 DesignSpark 經由佈線、設計電路圖進而去設計一塊專屬的自己的電路板。</p>
+					</div>
+				</article>
+			</div>
+			<div class="slide">
+				<article class="col-sm-6">
+					<a href="/" class="l-tag">
+						<div class="l-img">
+							<%= image_tag 'http://ewhcycu.org/images/activities/courses/electronicparts/cover.jpg' %>
+							<div class="mask"></div>
+						</div>
+						<div class="time  text-right">
+							<div class="date  h1">03/13</div>
+							<div class="year  h4">2014</div>
+						</div>
+					</a>
+					<div class="l-content">
+						<h1 class="h4  text-center  title"><%= link_to '認識基本電子元件', root_path %></h1>
+						<p>此次活動，是由社團幹部向組内成員做基本的電子元件介紹,將電子材料行採購作為最直接的教材，經由採購去熟悉並且認識基本電子元件，如：電容、電 阻、二極體以及麵包板。</p>
+					</div>
+				</article>
+				<article class="col-sm-6">
+					<a href="/" class="l-tag">
+						<div class="l-img">
+							<%= image_tag 'http://ewhcycu.org/images/activities/courses/welding/cover.jpg' %>
+							<div class="mask"></div>
+						</div>
+						<div class="time  text-right">
+							<div class="date  h1">03/28</div>
+							<div class="year  h4">2014</div>
+						</div>
+					</a>
+					<div class="l-content">
+						<h1 class="h4  text-center  title"><%= link_to '銲槍課程', root_path %></h1>
+						<p>大學生活帶給我們許多課本上的理論知識，而 EWH 想要提供的是跳脫書面的學問，將知識與實際操作結合，藉由有趣的焊接課程間接學習焊接的技巧、電路的布置，從親自動手做去引發學習的興趣。</p>
+					</div>
+				</article>
+			</div>
+			<div class="slide">
+				<article class="col-sm-6">
+					<a href="/" class="l-tag">
+						<div class="l-img">
+							<%= image_tag 'http://ewhcycu.org/images/activities/visits/ministryofforeignafairs/cover.jpg' %>
+							<div class="mask"></div>
+						</div>
+						<div class="time  text-right">
+							<div class="date  h1">11/26</div>
+							<div class="year  h4">2014</div>
+						</div>
+					</a>
+					<div class="l-content">
+						<h1 class="h4  text-center  title"><%= link_to '外交部參訪', root_path %></h1>
+						<p>外交部參訪 2014 年底我們世界衛生工程中原分會與國際事務研習社合辦參訪活動，除了到外交部進行參訪，了解內部構造及組織架構外，也到自來水博物館參訪，了解台灣自來水歷史及各項水利設施。</p>
+					</div>
+				</article>
+				<article class="col-sm-6">
+					<a href="/" class="l-tag">
+						<div class="l-img">
+							<%= image_tag 'http://ewhcycu.org/images/activities/visits/yilanltc/cover.jpg' %>
+							<div class="mask"></div>
+						</div>
+						<div class="time  text-right">
+							<div class="date  h1">05/24</div>
+							<div class="year  h4">2014</div>
+						</div>
+					</a>
+					<div class="l-content">
+						<h1 class="h4  text-center  title"><%= link_to '宜蘭長照中心參訪', root_path %></h1>
+						<p>此次參訪活動是由畢業校友開放自己經營的長照中心，提供給中原醫工的學生們做最直接的教學，不論在畢業後未來出路上的問題，亦或是要如何學以致用發揮長才，藉由學長自身的經歷，帶給我們的寶貴經驗是最大的收穫。</p>
+					</div>
+				</article>
+			</div>
+		</div>
+		<button class="btn-more  h3">活動總覽 <i class="fa fa-arrow-circle-right"></i></button>
+	</div>
+</section>

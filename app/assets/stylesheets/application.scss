@@ -12,20 +12,32 @@
  *
  *= require shared/bootstrap-base
  *= require shared/font-awesome-base
+ *= require OwlCarousel/owl.carousel
+ *= require OwlCarousel/owl.theme
  *= require_tree .
  *= require_self
  */
 
-/* =========================
+/* ==================================================
 	Variables
-   ========================= */
+   ================================================== */
+
+/* Navbar, Footer */
 $bg-color: 		black;
 $font-color: 	white;
+
+/* Font */
+$default-size:	14px;
+$default-height: 1.5;
+
+/* Color */
 $primary-color: #95caa0;
 
-/* =========================
+
+
+/* ==================================================
 	Mixins
-   ========================= */
+   ================================================== */
 
 /* Breakpoint mixin (Desktop first) */
 @mixin breakpoint($point) {
@@ -58,10 +70,25 @@ $primary-color: #95caa0;
 	}
 }
 
+/* 多行文字隱藏 */
+@mixin text-clamp($font-size: 14px, $lines: 3, $line-height: 1.5) {
+	overflow: hidden;
+	display: -webkit-box;
+	-webkit-line-clamp: $lines;
+	-webkit-box-orient: vertical;
+ 	   -moz-box-orient: vertical;
+ 		-ms-box-orient: vertical;
+	height: $font-size * $lines * $line-height;
+}
 
-/* =========================
+
+
+
+
+
+/* ==================================================
 	Reset & Basic settings
-   ========================= */
+   ================================================== */
 
 * {
 	padding: 0;
@@ -102,19 +129,38 @@ body {
 	min-height: 50vh;
 }
 
+section {
+	padding: 20px 0;
+}
 
-/* =========================
+article {
+	margin: 15px 0;
+}
+
+p {
+	font-size: $default-size;
+	line-height: $default-height;
+	text-align: justify;
+}
+
+
+
+
+/* ==================================================
 	Helper classes
-   ========================= */
+   ================================================== */
 
 .bold {
 	font-weight: bold;
 }
 
 
-/* =========================
+
+
+
+/* ==================================================
 	Layout
-   ========================= */
+   ================================================== */
 
 /* header */
 .logo {
@@ -170,7 +216,9 @@ body {
 	}
 	@include breakpoint(tablet) {
 		position: absolute;
-		transform: translateX(-100%);
+		-webkit-transform: translateX(-100%);
+			-ms-transform: translateX(-100%);
+				transform: translateX(-100%);
 		min-height: 100%;
 		width: 100%;
 		top: 0;
@@ -183,7 +231,9 @@ body {
 		}
 	}
 	&.open {
-		transform: translateX(0);
+		-webkit-transform: translateX(0);
+			-ms-transform: translateX(0);
+				transform: translateX(0);
 		transition: 0.5s;
 	}
 }
@@ -214,74 +264,274 @@ body {
 		background-color: $font-color;
 		margin-bottom: 5px;
 		transition: 0.3s;
-		transform: rotate(0deg) translate3d(0px, 0px, 0px);
+		-webkit-transform: rotate(0deg) translate3d(0px, 0px, 0px);
+			-ms-transform: rotate(0deg) translate3d(0px, 0px, 0px);
+				transform: rotate(0deg) translate3d(0px, 0px, 0px);
 		@include breakpoint(phablet) {
 			width: 25px;
 		}
 	}
 	&.active {
 		.icon-bar:first-child {
-			transform: rotate(405deg) translate3d(6px, 6px, 0px);
+			-webkit-transform: rotate(405deg) translate3d(6px, 6px, 0px);
+				-ms-transform: rotate(405deg) translate3d(6px, 6px, 0px);
+					transform: rotate(405deg) translate3d(6px, 6px, 0px);
 		}
 		.icon-bar:nth-child(2) {
 			width: 40px;
 			opacity: 0;
 		}
 		.icon-bar:last-child {
-			transform: rotate(-405deg) translate3d(6px, -6px, 0px);
+			-webkit-transform: rotate(-405deg) translate3d(6px, -6px, 0px);
+				-ms-transform: rotate(-405deg) translate3d(6px, -6px, 0px);
+					transform: rotate(-405deg) translate3d(6px, -6px, 0px);
 		}
 	}
 }
 
 /* footer */
-.page-footer {
-	.contact-info {
-		background-color: #fff;
-		padding: 30px 0;
-		.logo {
-			height: 70px;
+.page-footer .contact-info {
+	background-color: #fff;
+	padding: 30px 0;
+	.logo {
+		height: 70px;
+	}
+	.footer-title {
+		margin: 0;
+		padding: 15px 0 30px;
+		line-height: 40px;
+		@include wordbreak(never);
+		@include breakpoint(mobileonly) {
+			.sub-title {
+				font-size: 0;
+			}
 		}
-		.footer-title {
-			margin: 0;
-			padding: 15px 0 30px;
-			line-height: 40px;
-			@include wordbreak(never);
+	}
+	ul {
+		line-height: 2;
+		i {
+			font-size: 24px;
+			min-width: 32px;
+			text-align: center;
+		}
+		span {
 			@include breakpoint(mobileonly) {
-				.sub-title {
-					font-size: 0;
-				}
+				font-size: 0;
 			}
 		}
-		ul {
-			line-height: 2;
-			i {
-				font-size: 24px;
-				min-width: 32px;
-				text-align: center;
-			}
-			span {
-				@include breakpoint(mobileonly) {
-					font-size: 0;
-				}
-			}
+	}
+	.share-icon {
+		font-size: 48px;
+		.fa-facebook-official {
+			color: #46629e;
 		}
-		.share-icon {
-			font-size: 48px;
-			.fa-facebook-official {
-				color: #46629e;
-			}
-			.fa-github {
-				color: #000;
-			}
-			:hover {
+		.fa-github {
+			color: #000;
+		}
+		i {
+			transition: 0.3s;
+			&:hover {
 				color: $primary-color;
 			}
 		}
 	}
-	.copy-right {
-		background-color: $bg-color;
-		color: $font-color;
-		border-top: 1px solid lighten($bg-color, 60);
-		padding: 20px 0;
+}
+.copy-right {
+	background-color: $bg-color;
+	color: $font-color;
+	border-top: 1px solid lighten($bg-color, 60);
+	padding: 20px 0;
+}
+
+
+
+
+
+/* ==================================================
+	Module
+   ================================================== */
+
+.section-title {
+	font-weight: bold;
+	&::after {
+		position: relative;
+		content: '';
+		display: block;
+		width: 10%;
+		left: 45%;
+		top: 5px;
+		border-bottom: 3px solid $primary-color;
+	}
+}
+
+.btn-more {
+	display: block;
+	margin: auto;
+	font-weight: bold;
+	color: $primary-color;
+	background-color: #fff;
+	border: 5px solid $primary-color;
+	padding: 10px;
+	transition: 0.5s;
+	&:hover {
+		color: #fff;
+		background-color: $primary-color;
+	}
+}
+
+
+
+
+
+/* ==================================================
+	Pages
+   ================================================== */
+
+/* activity block */
+.l-tag {
+	position: relative;
+	display: block;
+	overflow: hidden;
+	&::before {
+		content: '';
+		position: absolute;
+		z-index: 9;
+		width: 100%;
+		padding-bottom: 100%;
+		right: 0;
+		bottom: 0;
+		background-color: $primary-color;
+		-webkit-transform: rotate(45deg) translate(77%, 0%) scale(0.7);
+      		-ms-transform: rotate(45deg) translate(77%, 0%) scale(0.7);
+          		transform: rotate(45deg) translate(77%, 0%) scale(0.7);
+		@include breakpoint(phablet) {
+			-webkit-transform: translate(0%, 0%);
+				-ms-transform: translate(0%, 0%);
+					transform: translate(0%, 0%);
+			width: 30%;
+		}
+	}
+	.l-img {
+		position: relative;
+		height: 0;
+		width: 100%;
+		padding-top: 40%;
+		overflow: hidden;
+		.mask {
+			position: absolute;
+			width: 100%;		
+			height: 100%;
+			top: 0;
+			transition: 0.5s;
+			background-image: image_url('mask.png');
+		}	
+		img {
+			position: absolute;
+			width: 110%;		
+			top: -30%;
+			left: -5%;
+			transition: 1s;
+		}
+	}
+	.time {
+		position: absolute;
+		display: block;
+		right: 0;
+		bottom: 0;
+		z-index: 10;
+		margin-right: 5%;
+		margin-bottom: 2.5%;
+		.date {
+			line-height: 0.5;
+			color: #000;
+			@include breakpoint(tablet) {
+				font-size: 24px;
+			}
+			@include breakpoint(phablet) {
+				font-size: 32px;
+			}
+			@include breakpoint(mobileonly) {
+				font-size: 22px;
+			}
+		}
+		.year {
+			line-height: 0.5;
+			color: #fff;
+			@include breakpoint(tablet) {
+				font-size: 18px;
+			}
+			@include breakpoint(phablet) {
+				font-size: 24px;
+			}
+			@include breakpoint(mobileonly) {
+				font-size: 14px;
+			}
+		}
+	}
+	&:hover {
+		.mask {
+			background-color: rgba(0, 0, 0, 0.2);
+		}
+		img {
+			width: 120%;
+			left: -10%;
+		}
+	}
+}
+
+.l-content {
+	.title a {
+		transition: 0.3s;
+		&:hover {
+			color: $primary-color;
+			border-left: 3px solid $primary-color;
+			border-right: 3px  solid $primary-color;
+			padding-left: 3px;
+			padding-right: 3px;
+		}
+	}
+	p {
+		@include text-clamp($default-size, 2, $default-height);
+		text-indent: 2em;
+	}		
+}
+
+
+/* customize carousel theme */
+.owl-theme .owl-controls {
+	.owl-pagination {
+		.active span {
+			background-color: $primary-color;
+		}
+	}
+	.owl-buttons {
+		div {
+			position: absolute;
+			top: 40%;
+			background-color: transparent;
+			color: #869791;
+			font-size: 80px;
+			opacity: 0.3;
+			transition: 0.5s;
+			&:hover {
+				color: $primary-color;
+				opacity: 0.7;
+			}
+			@media (max-width: 1380px) {
+				font-size: 56px;
+			}
+			@media (max-width: 1285px) and (min-width: 1200px) {
+				display: none;
+			}
+			@media (max-width: 1090px) {
+				display: none;
+			}
+		}
+		.owl-prev {
+			right: 100%;
+		}
+		.owl-next {
+			left: 100%;
+		}
 	}
 }
