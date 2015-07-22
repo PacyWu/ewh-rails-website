@@ -32,6 +32,7 @@ $default-height: 1.5;
 
 /* Color */
 $primary-color: #95caa0;
+$pink: #fca4a4;
 
 
 
@@ -135,6 +136,9 @@ section {
 
 article {
 	margin: 15px 0;
+	@include breakpoint(phablet) {
+		margin: 30px 0;
+	}
 }
 
 p {
@@ -351,6 +355,7 @@ p {
 	Module
    ================================================== */
 
+/* activity & news block */
 .section-title {
 	font-weight: bold;
 	&::after {
@@ -362,6 +367,26 @@ p {
 		top: 5px;
 		border-bottom: 3px solid $primary-color;
 	}
+}
+
+.l-content {
+	.title {
+		@include text-clamp(18px, 1, 1);
+		a {
+			transition: 0.3s;
+			&:hover {
+				color: $primary-color;
+				border-left: 3px solid $primary-color;
+				border-right: 3px  solid $primary-color;
+				padding-left: 3px;
+				padding-right: 3px;
+			}
+		}
+	}
+	p {
+		@include text-clamp($default-size, 2, $default-height);
+		text-indent: 2em;
+	}		
 }
 
 .btn-more {
@@ -388,7 +413,7 @@ p {
    ================================================== */
 
 /* activity block */
-.l-tag {
+.activity .l-tag {
 	position: relative;
 	display: block;
 	overflow: hidden;
@@ -479,21 +504,62 @@ p {
 	}
 }
 
-.l-content {
-	.title a {
-		transition: 0.3s;
-		&:hover {
-			color: $primary-color;
-			border-left: 3px solid $primary-color;
-			border-right: 3px  solid $primary-color;
-			padding-left: 3px;
-			padding-right: 3px;
+
+
+
+/* news block */
+.news .date {
+	float: left;
+	margin: 5px 10px 0 0;
+	text-align: center;
+	.month {
+		display: block;
+		color: #fff;
+		background-color: $pink;
+		margin-bottom: 5px;
+	}
+	.day {
+		display: block;
+		color: #000;
+		background-color: #fff;
+		padding: 5px 10px;
+		font-size: 24px;
+	}
+	&::after {
+		content: '';
+		display: block;
+		width: 0;
+		height: 0;
+		border-width: 10px 25px 0;
+		border-style: solid;
+		border-color: #fff transparent transparent;			
+	}
+}
+
+/* customize news block */
+.news {
+	background-color: $primary-color;
+	.section-title::after {
+		border-color: #fff;
+	}
+	.l-content {
+		.title a:hover {
+			color: #fff;
+			border-color: $pink;
+		}
+		p {
+			@include text-clamp($default-size, 5, $default-height);
 		}
 	}
-	p {
-		@include text-clamp($default-size, 2, $default-height);
-		text-indent: 2em;
-	}		
+	.btn-more {
+		background-color: $primary-color;
+		color: #fff;
+		border-color: #fff;
+		&:hover {
+			background-color: #fff;
+			color: $primary-color;			
+		}
+	}
 }
 
 
@@ -532,6 +598,23 @@ p {
 		}
 		.owl-next {
 			left: 100%;
+		}
+	}
+}
+
+.news .owl-theme .owl-controls {
+	.owl-pagination {
+		.active span {
+			background-color: $pink;
+		}
+	}
+	.owl-buttons {
+		div {
+			top: 30%;
+			color: #fff;
+			&:hover {
+				color: $pink;
+			}
 		}
 	}
 }
