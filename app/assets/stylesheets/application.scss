@@ -27,13 +27,15 @@ $bg-color: 		black;
 $font-color: 	white;
 
 /* Font */
-$default-size:	14px;
+$default-size:	 14px;
 $default-height: 1.5;
 
 /* Color */
 $primary-color: #95caa0;
-$pink: #fca4a4;
-
+$pink: 			#fca4a4;
+$yellow: 		#fcf1b2;
+$blue: 			#b2e6fc;
+$purple: 		#dcb2fc;
 
 
 /* ==================================================
@@ -136,7 +138,7 @@ section {
 
 article {
 	margin: 15px 0;
-	@include breakpoint(phablet) {
+	@include breakpoint(tablet) {
 		margin: 30px 0;
 	}
 }
@@ -146,6 +148,7 @@ p {
 	line-height: $default-height;
 	text-align: justify;
 }
+
 
 
 
@@ -378,9 +381,10 @@ p {
 	Module
    ================================================== */
 
-/* activity & news block */
 .section-title {
+	position: relative;
 	font-weight: bold;
+	margin-bottom: 30px;
 	&::after {
 		position: relative;
 		content: '';
@@ -527,9 +531,6 @@ p {
 	}
 }
 
-
-
-
 /* news block */
 .news .date {
 	float: left;
@@ -585,6 +586,113 @@ p {
 	}
 }
 
+/* about block */
+section.about {
+	.block {
+		border: 5px solid $primary-color;
+		border-radius: 10px;
+		position: relative;
+		padding: 20px 30px;
+		height: 300px;
+		@include breakpoint(tablet) {
+			min-height: 300px;
+		}
+	}
+	
+	.img {
+		position: relative;
+		padding: 0;
+	}
+
+	img {
+		position: absolute;
+		top: 0;
+		right: 0;
+		left: 0;
+		bottom: 0;
+		margin: auto;
+		max-height: 300px;
+	}
+
+	.title {
+		position: absolute;
+		background-color: $primary-color;
+		color: #fff;
+		bottom: 0;
+		left: 0;
+		margin: 0;	// 覆寫 H1
+		padding: 10px 20px 5px;
+		border-top-right-radius: 10px;
+	}
+
+	.goal .title {
+		bottom: 57px;
+	}
+
+	.btn-more {
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+		margin-left: -30px;
+		border: 0;
+		font-size: 24px;
+		line-height: 32px;
+		border-top: 5px solid $primary-color;
+	}
+}
+
+.about-bg {
+	position: relative;
+	overflow: hidden;
+	height: 400px;
+	.about-bg-inner {
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		background-image: -webkit-linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.5)),
+						  image-url('about-bg.jpg');
+		background-image: 	   -o-linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.5)),
+						  	   image-url('about-bg.jpg');
+		background-image: 		  linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.5)),
+						  		  image-url('about-bg.jpg');
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: 50% 45%;		
+	}
+}
+
+/* service block */
+section.service {
+	margin-top: -230px;
+	article {
+		min-height: 330px;
+		.img {
+			margin: auto;
+			width: 200px;
+			height: 200px;
+			border-radius: 50%;
+			color: #fff;
+			font-size: 120px;
+			line-height: 200px;
+		}
+		&:nth-child(1) .img {
+			background-color: $pink;
+			font-size: 110px;			
+		}
+		&:nth-child(2) .img {
+			background-color: $yellow;
+		}
+		&:nth-child(3) .img {
+			background-color: $blue;
+			font-size: 140px;
+		}
+		&:nth-child(4) .img {
+			background-color: $purple;
+		}
+	}
+}
 
 /* customize carousel theme */
 .owl-theme .owl-controls {
