@@ -119,7 +119,7 @@ input[type="submit"] {
 }
 
 body {
-	font-family: Helvetica, '微軟正黑體', Arial, serif;
+	font-family: Helvetica, 'Microsoft JhengHei', Arial, serif;
 	background-color: #fff;
 	@include breakpoint(mobileonly) {
 		padding-top: 50px;
