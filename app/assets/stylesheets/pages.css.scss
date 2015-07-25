@@ -1,0 +1,329 @@
+// Place all the styles related to the pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* ==================================================
+	Pages
+   ================================================== */
+
+/* activity block */
+.activity .l-tag {
+	position: relative;
+	display: block;
+	overflow: hidden;
+	&::before {
+		content: '';
+		position: absolute;
+		z-index: 9;
+		width: 100%;
+		padding-bottom: 100%;
+		right: 0;
+		bottom: 0;
+		background-color: $primary-color;
+		-webkit-transform: rotate(45deg) translate(77%, 0%) scale(0.7);
+      		-ms-transform: rotate(45deg) translate(77%, 0%) scale(0.7);
+          		transform: rotate(45deg) translate(77%, 0%) scale(0.7);
+		@include breakpoint(phablet) {
+			-webkit-transform: translate(0%, 0%);
+				-ms-transform: translate(0%, 0%);
+					transform: translate(0%, 0%);
+			width: 30%;
+		}
+	}
+	.l-img {
+		position: relative;
+		height: 0;
+		width: 100%;
+		padding-top: 40%;
+		overflow: hidden;
+		.mask {
+			position: absolute;
+			width: 100%;		
+			height: 100%;
+			top: 0;
+			transition: 0.5s;
+			background-image: image_url('mask.png');
+		}	
+		img {
+			position: absolute;
+			width: 110%;		
+			top: -30%;
+			left: -5%;
+			transition: 1s;
+		}
+	}
+	.time {
+		position: absolute;
+		display: block;
+		right: 0;
+		bottom: 0;
+		z-index: 10;
+		margin-right: 2.5%;
+		margin-bottom: 2.5%;
+		.date {
+			// line-height: 0.5;
+			color: #000;
+			@include breakpoint(tablet) {
+				font-size: 24px;
+			}
+			@include breakpoint(phablet) {
+				font-size: 32px;
+			}
+			@include breakpoint(mobileonly) {
+				font-size: 22px;
+			}
+		}
+		.year {
+			line-height: 0.5;
+			color: #fff;
+			@include breakpoint(tablet) {
+				font-size: 18px;
+			}
+			@include breakpoint(phablet) {
+				font-size: 24px;
+			}
+			@include breakpoint(mobileonly) {
+				font-size: 14px;
+			}
+		}
+	}
+	&:hover {
+		.mask {
+			background-color: rgba(0, 0, 0, 0.2);
+		}
+		img {
+			width: 120%;
+			left: -10%;
+		}
+	}
+}
+
+/* news block */
+.news .date {
+	float: left;
+	margin: 5px 10px 0 0;
+	text-align: center;
+	.month {
+		display: block;
+		color: #fff;
+		background-color: $red;
+		margin-bottom: 5px;
+	}
+	.day {
+		display: block;
+		color: #000;
+		background-color: #fff;
+		padding: 5px 10px;
+		font-size: 24px;
+	}
+	&::after {
+		content: '';
+		display: block;
+		width: 0;
+		height: 0;
+		border-width: 10px 25px 0;
+		border-style: solid;
+		border-color: #fff transparent transparent;			
+	}
+}
+
+/* customize news block */
+.news {
+	// background-color: $primary-color;
+	background-color: rgba(100, 181, 246, 0.7);
+	.section-title::after {
+		border-color: #fff;
+	}
+	.l-content {
+		.title {
+			color: $title-color-with-bg;
+			a:hover {
+				color: #fff;
+				border-color: $red;
+			}
+		}
+		p {
+			@include text-clamp($default-size, 5, $default-height);
+		}
+	}
+	.btn-more {
+		background-color: transparent;
+		color: #fff;
+		border-color: #fff;
+		&:hover {
+			background-color: #fff;
+			color: rgba(100, 181, 246, 0.7);			
+		}
+	}
+}
+
+/* about block */
+section.about {
+	.block {
+		border: 5px solid $primary-color;
+		border-radius: 10px;
+		position: relative;
+		padding: 20px 30px;
+		height: 300px;
+		@include breakpoint(tablet) {
+			min-height: 300px;
+		}
+	}
+	
+	.img {
+		position: relative;
+		padding: 0;
+	}
+
+	img {
+		position: absolute;
+		top: 0;
+		right: 0;
+		left: 0;
+		bottom: 0;
+		margin: auto;
+		max-height: 300px;
+	}
+
+	.title {
+		position: absolute;
+		background-color: $primary-color;
+		color: #fff;
+		bottom: 0;
+		left: 0;
+		margin: 0;	// 覆寫 H1
+		padding: 10px 20px 5px;
+		border-top-right-radius: 10px;
+	}
+
+	.goal .title {
+		bottom: 57px;
+	}
+
+	.btn-more {
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+		margin-left: -30px;
+		border: 0;
+		font-size: 24px;
+		line-height: 32px;
+		border-top: 5px solid $primary-color;
+	}
+}
+
+.about-bg {
+	position: relative;
+	overflow: hidden;
+	height: 400px;
+	.about-bg-inner {
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		background-image: -webkit-linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.5)),
+						  image-url('about-bg.jpg');
+		background-image: 	   -o-linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.5)),
+						  	   image-url('about-bg.jpg');
+		background-image: 		  linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.5)),
+						  		  image-url('about-bg.jpg');
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: 50% 45%;		
+	}
+}
+
+/* service block */
+section.service {
+	margin-top: -230px;
+	article {
+		min-height: 330px;
+		h1 {
+			font-weight: bold;
+			color: $title-color;
+		}
+		.img {
+			margin: auto;
+			width: 200px;
+			height: 200px;
+			border-radius: 50%;
+			color: #fff;
+			font-size: 120px;
+			line-height: 200px;
+		}
+		&:nth-child(1) .img {
+			background-color: $orange;
+			font-size: 110px;			
+		}
+		&:nth-child(2) .img {
+			background-color: $blue;
+		}
+		&:nth-child(3) .img {
+			background-color: $green;
+			font-size: 140px;
+		}
+		&:nth-child(4) .img {
+			background-color: $red;
+		}
+		p {
+			color: $content-color;
+		}
+	}
+}
+
+/* customize carousel theme */
+.owl-theme .owl-controls {
+	.owl-pagination {
+		.active span {
+			background-color: $primary-color;
+		}
+	}
+	.owl-buttons {
+		div {
+			position: absolute;
+			top: 40%;
+			background-color: transparent;
+			color: #869791;
+			font-size: 80px;
+			opacity: 0.3;
+			transition: 0.5s;
+			&:hover {
+				color: $primary-color;
+				opacity: 0.7;
+			}
+			@media (max-width: 1380px) {
+				font-size: 56px;
+			}
+			@media (max-width: 1285px) and (min-width: 1200px) {
+				display: none;
+			}
+			@media (max-width: 1090px) {
+				display: none;
+			}
+		}
+		.owl-prev {
+			right: 100%;
+		}
+		.owl-next {
+			left: 100%;
+		}
+	}
+}
+
+.news .owl-theme .owl-controls {
+	.owl-pagination {
+		.active span {
+			background-color: $red;
+		}
+	}
+	.owl-buttons {
+		div {
+			top: 30%;
+			color: #fff;
+			&:hover {
+				color: $red;
+			}
+		}
+	}
+}

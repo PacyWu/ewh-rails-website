@@ -1,0 +1,58 @@
+/* ==================================================
+	Module
+   ================================================== */
+
+.section-title {
+	color: #455A64;
+	position: relative;
+	font-weight: bold;
+	margin-bottom: 30px;
+	&::after {
+		position: relative;
+		content: '';
+		display: block;
+		width: 10%;
+		left: 45%;
+		top: 5px;
+		border-bottom: 3px solid $primary-color;
+	}
+}
+
+.l-content {
+	.title {
+		font-size: 24px;
+		line-height: 1.5;
+		font-weight: bold;
+		color: $title-color;
+		@include text-clamp(24px, 1, 1.5);
+		a {
+			transition: 0.3s;
+			&:hover {
+				color: $primary-color;
+				border-left: 3px solid $primary-color;
+				border-right: 3px  solid $primary-color;
+				padding-left: 3px;
+				padding-right: 3px;
+			}
+		}
+	}
+	p {
+		color: $content-color;
+		@include text-clamp($default-size, 2, $default-height);
+	}		
+}
+
+.btn-more {
+	display: block;
+	font-weight: bold;
+	color: $primary-color;
+	background-color: #fff;
+	border: 5px solid $primary-color;
+	margin: 20px auto 0;
+	padding: 10px;
+	transition: 0.5s;
+	&:hover {
+		color: #fff;
+		background-color: $primary-color;
+	}
+}
