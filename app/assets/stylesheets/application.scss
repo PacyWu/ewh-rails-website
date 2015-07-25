@@ -429,11 +429,11 @@ p {
 
 .btn-more {
 	display: block;
-	margin: auto;
 	font-weight: bold;
 	color: $primary-color;
 	background-color: #fff;
 	border: 5px solid $primary-color;
+	margin: 20px auto 0;
 	padding: 10px;
 	transition: 0.5s;
 	&:hover {
