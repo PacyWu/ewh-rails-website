@@ -30,7 +30,7 @@ input[type="submit"] {
 }
 
 body {
-	font-family: Helvetica, 'Microsoft JhengHei', Arial, serif-sans;
+	font-family: Helvetica, 'Microsoft JhengHei', Arial, sans-serif;
 	background-color: #fff;
 	@include breakpoint(mobileonly) {
 		padding-top: 50px;
