@@ -1,11 +1,25 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title><%= content_for?(:page_title) ? "#{ yield :page_title } | 世界衛生工程" : "世界衛生工程" %></title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<head itemscope="itemscope" itemtype="http://schema.org/Organization">
+	<title><%= content_for?(:page_title) ? "#{ yield :page_title } | 世界衛生工程" : "世界衛生工程" %></title>
+	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+	<%= csrf_meta_tags %>
+	<meta charset="utf-8">
+	<meta name="viewport" 		  content="width=device-width, initial-scale=1">
+	<meta name="description" 		  content="世界衛生工程 (Engineering World Health, EWH) 是一個非營利的國際組織，致力動員生物醫學工程組織，在醫院服務資源匱乏的開發中國家、社區改善醫療照護品質。">
+	<!-- Open Graph protocol -->	
+	<meta property="og:url"         content="http://ewhcycu.herokuapp.com" />
+	<meta property="og:type"        content="website" />
+	<meta property="og:title"       content="世界衛生工程 中原大學分會" />
+	<meta property="og:description" content="世界衛生工程 (Engineering World Health, EWH) 是一個非營利的國際組織，致力動員生物醫學工程組織，在醫院服務資源匱乏的開發中國家、社區改善醫療照護品質。" />
+	<meta property="og:site_name"   content="EWHCYCU" />
+	<meta property="og:image"       content="http://ewhcycu.herokuapp.com/assets/EWH_Logo-1978a7da2bc936e3d0f3595a683aeb657f1c2c1fadebd3926aaae220c0ab7c10.png" />
+	<meta property="og:locale"      content="zh-TW" />
+	<!-- Schema.org -->
+	<meta itemprop="name" 		  content="世界衛生工程 中原大學分會" />
+	<meta itemprop="description"    content="世界衛生工程 (Engineering World Health, EWH) 是一個非營利的國際組織，致力動員生物醫學工程組織，在醫院服務資源匱乏的開發中國家、社區改善醫療照護品質。" />
+	<meta itemprop="image"    	  content="http://ewhcycu.herokuapp.com/assets/EWH_Logo-1978a7da2bc936e3d0f3595a683aeb657f1c2c1fadebd3926aaae220c0ab7c10.png" />
 </head>
 <body>
 
