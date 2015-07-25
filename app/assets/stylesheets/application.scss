@@ -222,11 +222,12 @@ p {
 		}
 	}
 	@include breakpoint(tablet) {
-		position: absolute;
+		position: fixed;
+		overflow: hidden;
 		-webkit-transform: translateX(-100%);
 			-ms-transform: translateX(-100%);
 				transform: translateX(-100%);
-		min-height: 100%;
+		height: 100%;
 		width: 100%;
 		top: 0;
 		.nav-item {
@@ -235,6 +236,10 @@ p {
 			&:first-child {
 				margin-top: 60px;
 			}
+		}
+		div {
+			overflow: auto;
+			height: 100%;
 		}
 	}
 	&.open {
