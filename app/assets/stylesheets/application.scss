@@ -183,7 +183,15 @@ p {
 
 .header-title {
 	@include wordbreak(never);
-	.sub-title {
+	margin: 0;
+	a {
+		display: table;
+	}
+	div {
+		display: table-cell; 
+		vertical-align: middle;
+	}
+	span {
 		@include breakpoint(phablet) {
 			font-size: 30px;	// h2
 		}
@@ -191,10 +199,8 @@ p {
 			display: none;
 		}
 	}
-	span {
-		@include breakpoint(mobileonly) {
-			font-size: 30px;
-		}
+	p {
+		margin-bottom: 0;
 	}
 }
 
