@@ -104,13 +104,13 @@
 	margin: 5px 10px 0 0;
 	text-align: center;
 	.month {
-		display: block;
 		color: #fff;
 		background-color: $red;
 		margin-bottom: 5px;
+		line-height: $default-height;
+		vertical-align: middle;
 	}
 	.day {
-		display: block;
 		color: #000;
 		background-color: #fff;
 		padding: 5px 10px;
@@ -248,20 +248,26 @@ section.service {
 			width: 200px;
 			height: 200px;
 			border-radius: 50%;
-			color: #fff;
-			font-size: 120px;
-			line-height: 200px;
+			i {
+				color: #fff;
+				line-height: 200px;
+				font-size: 120px;
+			}
 		}
 		&:nth-child(1) .img {
 			background-color: $orange;
-			font-size: 110px;
+			i {
+				font-size: 110px;
+			}
 		}
 		&:nth-child(2) .img {
 			background-color: $blue;
 		}
 		&:nth-child(3) .img {
 			background-color: $green;
-			font-size: 140px;
+			i {
+				font-size: 140px;
+			}
 		}
 		&:nth-child(4) .img {
 			background-color: $red;
