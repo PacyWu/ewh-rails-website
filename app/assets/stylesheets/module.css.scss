@@ -38,7 +38,7 @@
 	}
 	p {
 		color: $content-color;
-		@include text-clamp($default-size, 2, $default-height);
+		@include text-clamp($default-size, 5, $default-height);
 	}		
 }
 

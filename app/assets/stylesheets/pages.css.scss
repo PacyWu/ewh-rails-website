@@ -62,7 +62,7 @@
 		margin-bottom: 2.5%;
 		.date {
 			// line-height: 0.5;
-			color: #000;
+			color: #fff;
 			@include breakpoint(tablet) {
 				font-size: 24px;
 			}
@@ -98,39 +98,9 @@
 	}
 }
 
-/* news block */
-.news .date {
-	float: left;
-	margin: 5px 10px 0 0;
-	text-align: center;
-	.month {
-		color: #fff;
-		background-color: $red;
-		margin-bottom: 5px;
-		line-height: $default-height;
-		vertical-align: middle;
-	}
-	.day {
-		color: #000;
-		background-color: #fff;
-		padding: 5px 10px;
-		font-size: 24px;
-	}
-	&::after {
-		content: '';
-		display: block;
-		width: 0;
-		height: 0;
-		border-width: 10px 25px 0;
-		border-style: solid;
-		border-color: #fff transparent transparent;
-	}
-}
-
-/* customize news block */
-.news {
-	// background-color: $primary-color;
-	background-color: rgba(100, 181, 246, 0.7);
+/* customize activity block */
+.activity {
+	background-color: rgba(100, 181, 246, 0.6);
 	.section-title::after {
 		border-color: #fff;
 	}
@@ -143,7 +113,7 @@
 			}
 		}
 		p {
-			@include text-clamp($default-size, 5, $default-height);
+			@include text-clamp($default-size, 2, $default-height);
 		}
 	}
 	.btn-more {
@@ -154,6 +124,51 @@
 			background-color: #fff;
 			color: rgba(100, 181, 246, 0.7);
 		}
+	}
+}
+
+/* news block */
+.news .date {
+	float: left;
+	position: relative;
+	margin: 5px 15px 0 0;
+	text-align: center;
+    box-shadow: 7px 0px 3px -3px rgba(0, 0, 0, 0.75);
+	.month {
+		color: #fff;
+		background-color: $red;
+		line-height: $default-height;
+		vertical-align: middle;
+	}
+	.day {
+		color: #000;
+		background-color: #fff;
+		padding: 5px 10px;
+		font-size: 24px;
+	}
+	&::before {
+		position: absolute;
+		bottom: -10px;
+		content: '';
+		display: block;
+		height: 0;
+		width: 0;
+		border-width: 10px 23px 0;
+		border-style: solid;
+		border-color: #fff transparent transparent;
+	}
+	&::after {
+		position: absolute;
+		content: '';
+		display: block;
+		width: 27.079872px;
+		height: 10px;
+		z-index: -1;
+		box-shadow: 3px 2px 3px 1px rgba(0, 0, 0, 0.75);
+		background-color: #fff;
+		transform: rotate(-23.49856568deg); // arctan(10/23) = 23.49856568
+		bottom: -5px;
+		right: 1px;
 	}
 }
 
@@ -285,7 +300,7 @@ section.service {
 	.owl-buttons {
 		div {
 			position: absolute;
-			top: 40%;
+			top: 30%;
 			background-color: transparent;
 			color: #869791;
 			font-size: 80px;
@@ -314,7 +329,7 @@ section.service {
 	}
 }
 
-.news .owl-theme .owl-controls {
+.activity .owl-theme .owl-controls {
 	.owl-pagination {
 		.active span {
 			background-color: $red;
