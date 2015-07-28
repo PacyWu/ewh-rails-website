@@ -12,6 +12,9 @@
 	@include breakpoint(phablet) {
 		height: 70px;
 	}
+	@include breakpoint(mobileonly) {
+		height: 50px;
+	}
 }
 
 .header-title {
