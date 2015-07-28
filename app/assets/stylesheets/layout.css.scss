@@ -144,20 +144,6 @@
 .page-footer .contact-info {
 	background-color: #fff;
 	padding: 30px 0;
-	.logo {
-		height: 70px;
-	}
-	.footer-title {
-		margin: 0;
-		padding: 15px 0 30px;
-		line-height: 40px;
-		@include wordbreak(never);
-		@include breakpoint(mobileonly) {
-			.sub-title {
-				font-size: 0;
-			}
-		}
-	}
 	ul {
 		line-height: 1.5em;
 		padding-left: 1.5em;
@@ -188,6 +174,9 @@
 			&:hover {
 				color: $primary-color;
 			}
+		}
+		@include breakpoint(phablet) {
+			text-align: center;
 		}
 	}
 }
