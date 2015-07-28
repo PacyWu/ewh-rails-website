@@ -253,7 +253,6 @@ section.service {
 		min-height: 350px;
 		h1 {
 			font-weight: bold;
-			color: $title-color;
 		}
 		.img {
 			margin: auto;
@@ -266,23 +265,43 @@ section.service {
 				font-size: 120px;
 			}
 		}
-		&:nth-child(1) .img {
-			background-color: $orange;
-			i {
-				font-size: 110px;
+		&:nth-child(1) {
+			h1 {
+				color: darken($orange, 20);
+			}
+			.img {
+				background-color: $orange;
+				i {
+					font-size: 110px;
+				}
 			}
 		}
-		&:nth-child(2) .img {
-			background-color: $blue;
-		}
-		&:nth-child(3) .img {
-			background-color: $green;
-			i {
-				font-size: 140px;
+		&:nth-child(2) {
+			h1 {
+				color: darken($blue, 20);
+			}
+			.img {
+				background-color: $blue;
 			}
 		}
-		&:nth-child(4) .img {
-			background-color: $red;
+		&:nth-child(3) {
+			h1 {
+				color: darken($green, 20);
+			}
+			.img {
+				background-color: $green;
+				i {
+					font-size: 140px;
+				}
+			}
+		}
+		&:nth-child(4) {
+			h1 {
+				color: darken($red, 20);
+			}
+			.img {
+				background-color: $red;
+			}
 		}
 		p {
 			color: $content-color;
