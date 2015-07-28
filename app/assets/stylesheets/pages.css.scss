@@ -6,6 +6,68 @@
 	Pages
    ================================================== */
 
+/* about block */
+section.about {
+	@include breakpoint(phablet) {
+		.org {
+			top: -300px;
+		}
+		.img {
+			top: 300px;
+		}
+	}
+	.block {
+		border: 5px solid $primary-color;
+		border-radius: 10px;
+		position: relative;
+		padding: 20px 30px;
+		height: 300px;
+		@include breakpoint(tablet) {
+			min-height: 300px;
+		}
+	}
+
+	.img {
+		position: relative;
+		padding: 0;
+		img {
+			position: absolute;
+			top: 0;
+			right: 0;
+			left: 0;
+			bottom: 0;
+			margin: auto;
+			max-height: 300px;
+		}
+	}
+
+	.title {
+		position: absolute;
+		background-color: $primary-color;
+		color: #fff;
+		bottom: 0;
+		left: 0;
+		margin: 0;	// 覆寫 H1
+		padding: 10px 20px 5px;
+		border-top-right-radius: 10px;
+	}
+
+	.goal .title {
+		bottom: 57px;
+	}
+
+	.btn-more {
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+		margin-left: -30px;
+		border: 0;
+		font-size: 24px;
+		line-height: 32px;
+		border-top: 5px solid $primary-color;
+	}
+}
+
 /* activity block */
 .activity .l-tag {
 	position: relative;
@@ -169,61 +231,6 @@
 		transform: rotate(-23.49856568deg); // arctan(10/23) = 23.49856568
 		bottom: -5px;
 		right: 1px;
-	}
-}
-
-/* about block */
-section.about {
-	.block {
-		border: 5px solid $primary-color;
-		border-radius: 10px;
-		position: relative;
-		padding: 20px 30px;
-		height: 300px;
-		@include breakpoint(tablet) {
-			min-height: 300px;
-		}
-	}
-
-	.img {
-		position: relative;
-		padding: 0;
-	}
-
-	img {
-		position: absolute;
-		top: 0;
-		right: 0;
-		left: 0;
-		bottom: 0;
-		margin: auto;
-		max-height: 300px;
-	}
-
-	.title {
-		position: absolute;
-		background-color: $primary-color;
-		color: #fff;
-		bottom: 0;
-		left: 0;
-		margin: 0;	// 覆寫 H1
-		padding: 10px 20px 5px;
-		border-top-right-radius: 10px;
-	}
-
-	.goal .title {
-		bottom: 57px;
-	}
-
-	.btn-more {
-		position: absolute;
-		bottom: 0;
-		width: 100%;
-		margin-left: -30px;
-		border: 0;
-		font-size: 24px;
-		line-height: 32px;
-		border-top: 5px solid $primary-color;
 	}
 }
 
