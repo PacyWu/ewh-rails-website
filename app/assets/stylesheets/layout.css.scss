@@ -201,6 +201,7 @@
 	height: 50px;
 	border: 0;
 	font-size: 24px;
+	outline-style: none;
 	text-align: center;
 	background-color: $bg-color;
 	color: $font-color;
@@ -210,5 +211,10 @@
 		color: $bg-color;
 		background-color: $font-color;
 		opacity: 1;
+	}
+	&:focus {
+		background-color: $bg-color;
+		color: $font-color;
+		opacity: 0.5;
 	}
 }
