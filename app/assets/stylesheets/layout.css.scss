@@ -40,6 +40,84 @@
 	}
 }
 
+/* nav-header */
+.sub-header {
+	min-height: 40vh;
+	padding: 0; //reset section setting
+	@include background-image(linear-gradient(rgba(1, 1, 1, 0.38),
+											  rgba(1, 1, 1, 0.54),
+											  rgba(1, 1, 1, 0.38)), image-url('about-bg.jpg'));
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: 50% 50%;
+	background-attachment: fixed;
+	.title {
+		color: $font-color;
+		position: relative;
+		text-align: left;
+		margin: 10vh 0;
+		h1 {
+			margin-bottom: 50px;
+			&::before {
+				content: '';
+				position: relative;
+				display: block;
+				width: 20%;
+				margin-bottom: 50px;
+				border-bottom: 3px solid $font-color;
+			}
+		}
+	}
+	.feature {
+		clear: both;
+		position: relative;
+		.block {
+			position: absolute;
+			padding: 0;
+			transform-origin: top left;
+			overflow: hidden;
+			&::after {
+				content: '';
+				display: block;
+				height: 100%;
+				width: 100%;
+				background-size: 150%;
+				background-position: center;
+				background-repeat: no-repeat;
+				@include transform(rotate(45deg));
+				transform-origin: center;
+			}
+			&:nth-child(1) {
+				background-color: rgba($green, 0.78);
+				@include transform(rotate(-45deg) translateY(-110%) translateX(130%));
+				height: 130px;
+				width: 130px;
+				&::after {
+					background-image: image-url('http://ewhcycu.org/images/activities/camps/butterflyeffect/cover.jpg');
+				}
+			}
+			&:nth-child(2) {
+				background-color: rgba($orange, 0.78);
+				@include transform(rotate(-45deg));
+				height: 150px;
+				width: 150px;
+				&::after {
+					background-image: image-url('about-bg.jpg');
+				}
+			}
+			&:nth-child(3) {
+				background-color: rgba($red, 0.78);
+				@include transform(rotate(-45deg) translateX(70%));
+				height: 240px;
+				width: 240px;
+				&::after {
+					background-image: image-url('http://ewhcycu.org/images/activities/courses/welding/cover.jpg');
+				}
+			}
+		}
+	}
+}
+
 /* navbar */
 .main-nav {
 	background-color: $bg-color;
