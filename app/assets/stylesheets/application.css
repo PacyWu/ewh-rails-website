@@ -14,6 +14,7 @@
  *= require shared/font-awesome-base
  *= require OwlCarousel/owl.carousel
  *= require OwlCarousel/owl.theme
+ *= require animate
  *= require all
  * require_tree .
  *= require_self
