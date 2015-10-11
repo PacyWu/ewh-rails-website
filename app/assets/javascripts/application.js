@@ -15,9 +15,12 @@
 // require turbolinks
 //= require bootstrap
 //= require OwlCarousel/owl.carousel
+//= require wow
 //= require_tree .
 
 $(function(event){
+	new WOW().init();
+	
 	$('.nav-btn').on('click', function(){
 		$(this).toggleClass('active');
 		$('.main-nav').toggleClass('open');
