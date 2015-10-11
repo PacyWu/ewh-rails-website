@@ -9,3 +9,12 @@ section.sub-header
             .col-md-6.block
             .col-md-6.block
             .col-md-6.block
+
+.container
+    .col-md-7
+        ol.breadcrumb-list
+            li.breadcrumb-item
+                = link_to root_path do
+                    i.fa.fa-home
+            li.breadcrumb-item
+                = link_to '活動總覽', activities_path, class: 'active'
