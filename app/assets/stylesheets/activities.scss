@@ -1,3 +1,123 @@
 // Place all the styles related to the activities controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* Categories */
+.category-item {
+    display: inline-block;
+    &:not(:last-child) {
+        margin-right: 10px;
+    }
+    a {
+        padding: 10px 20px;
+        border: 1px solid #ddd;
+        background-color: #fff;
+        position: relative;
+        &::after {
+            content: '';
+            display: block;
+            position: absolute;
+            border-right: 15px solid transparent;
+			border-left: 15px solid transparent;
+			border-top: 10px solid $primary-color;
+            left: 50%;
+            @include translateX(-50%);
+            z-index: -1;
+        }
+        &:hover,
+        &.active {
+            @include transition(all 0.5s);
+            color: #fff;
+            background-color: $primary-color;
+            border-color: $primary-color;
+            &::after {
+                margin-top: 5px;
+                @include transition(all 0.5s);
+            }
+        }
+    }
+}
+
+/* Activities */
+.activity-item {
+    margin-bottom: 40px;
+    &:hover {
+        .title,
+        .info {
+            color: $title-color-with-bg;
+        }
+        .content {
+            background-color: $primary-color;
+            color: #fff;
+        }
+        .btn {
+            color: #000;
+            background-color: #fff;
+        }
+    }
+    .title {
+        color: $primary-color;
+        font-weight: bold;
+        @include transition(all, 0.5s);
+        @include text-clamp(24px, 1, 1);
+    }
+    .info {
+        color: $primary-color;
+        text-align: center;
+        display: block;
+        @include transition(all, 0.5s);
+        i::before {
+            margin: 0 5px;
+        }
+        // 三種狀態
+        &.expired::before {
+            content: '已結束';
+            border-radius: 4px;
+            background-color: lighten($red, 40);
+            color: $red;
+        }
+        &.underway::before {
+            content: '進行中';
+            border-radius: 4px;
+            background-color: lighten($green, 40);
+            color: $green;
+        }
+        &.upcoming::before {
+            content: '即將開始';
+            border-radius: 4px;
+            background-color: lighten($orange, 40);
+            color: $orange;
+        }
+    }
+    .img {
+    	position: relative;
+    	width: 100%;
+    	height: 0;
+    	padding-top: 70%;
+    	overflow: hidden;
+    	img {
+    		position: absolute;
+    		width: 130%;
+    		left: -15%;
+    		top: 0;
+    	}
+    }
+    .content {
+        border: 1px solid #ddd;
+        border-top: 0;
+        padding: 2rem;
+        color: $content-color;
+        @include transition(all, 0.5s);
+    }
+    .btn {
+        background-color: $primary-color;
+        color: #fff;
+        margin-top: 3rem;
+        @include transition(all, 0.5s);
+        &:hover {
+            color: darken($primary-color, 20);
+            border-color: darken($primary-color, 30);
+            font-weight: bold;
+        }
+    }
+}

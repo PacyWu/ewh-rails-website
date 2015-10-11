@@ -18,3 +18,52 @@ section.sub-header
                     i.fa.fa-home
             li.breadcrumb-item
                 = link_to '活動總覽', activities_path, class: 'active'
+
+section
+    h1.sr-only 活動
+    .container
+        article.col-lg-12.categories
+            h1.sr-only 分類標籤
+            .category-list
+                span.category-item.h4.wow.fadeInDown
+                    = link_to '全部', activities_path, class: 'active'
+                span.category-item.h4.wow.fadeInDown data-wow-delay = '0.5s'
+                    = link_to '課程', activities_path
+                span.category-item.h4.wow.fadeInDown data-wow-delay = '1s'
+                    = link_to '講座', activities_path
+                span.category-item.h4.wow.fadeInDown data-wow-delay = '1.5s'
+                    = link_to '營隊', activities_path
+                span.category-item.h4.wow.fadeInDown data-wow-delay = '2s'
+                    = link_to '參訪', activities_path
+        article.col-lg-12.activities
+            h1.sr-only 分類總覽
+            .activity-list
+                .activity-item.col-lg-3.col-md-4.col-sm-6.wow.flipInY
+                    h3.title.text-center Design Spark
+                    span.h5.info.text-center.underway
+                        i.fa.fa-clock-o 2015/12/10
+                    .img
+                        = image_tag 'http://ewhcycu.org/images/activities/courses/welding/info.jpg'
+                    p.content
+                        | 認識尼泊爾，探討尼泊爾當地公共衛生、基礎建設、教育資源的情況，思考個人能給予世界的回饋有哪些/？
+                        = link_to '活動詳細', activities_path, class: 'btn btn-block text-center'
+                .activity-item.col-lg-3.col-md-4.col-sm-6.wow.flipInY
+                    h3.title.text-center 國際講座 謎樣國度尼泊爾
+                    span.h5.info.text-center.expired
+                        i.fa.fa-clock-o 2015/06/10
+                    .img
+                        = image_tag 'http://ewhcycu.org/images/activities/camps/butterflyeffect/member.jpg'
+                    p.content
+                        | 認識尼泊爾，探討尼泊爾當地公共衛生、基礎建設、教育資源的情況，思考個人能給予世界的回饋有哪些/？
+                        = link_to '活動詳細', activities_path, class: 'btn btn-block text-center'
+                - 10.times do |x|
+                    .activity-item.col-lg-3.col-md-4.col-sm-6.wow.flipInY
+                        h3.title.text-center 小蝴蝶效應營隊
+                        span.h5.info.text-center.upcoming
+                            i.fa.fa-clock-o 2015/11/19
+                        .img
+                            = image_tag 'http://ewhcycu.org/images/activities/camps/butterflyeffect/info.jpg'
+                        p.content
+                            | 認識尼泊爾，探討尼泊爾當地公共衛生、基礎建設、教育資源的情況，思考個人能給予世界的回饋有哪些/？
+                            = link_to '活動詳細', activities_path, class: 'btn btn-block text-center'
+                end
