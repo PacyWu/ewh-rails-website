@@ -57,7 +57,7 @@ section
                         | 認識尼泊爾，探討尼泊爾當地公共衛生、基礎建設、教育資源的情況，思考個人能給予世界的回饋有哪些/？
                         = link_to '活動詳細', activities_path, class: 'btn btn-block text-center'
                 - 10.times do |x|
-                    .activity-item.col-lg-3.col-md-4.col-sm-6.wow.flipInY
+                    .activity-item.col-lg-3.col-md-4.col-sm-6.wow.flipInY data-wow-delay = "0.#{x}s"
                         h3.title.text-center 小蝴蝶效應營隊
                         span.h5.info.text-center.upcoming
                             i.fa.fa-clock-o 2015/11/19
