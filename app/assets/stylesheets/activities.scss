@@ -121,3 +121,107 @@
         }
     }
 }
+
+.activity-header {
+    h1 {
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+    .status {
+        position: relative;
+        &.expired,
+        &.underway,
+        &.upcoming {
+            &::before {
+                content: '';
+                position: absolute;
+                display: block;
+                border-right: 20px solid transparent;
+    			border-left: 20px solid transparent;
+    			border-bottom: 15px solid lighten($red, 40);
+                margin-top: -15px;
+                right: 50%;
+                @include translateX(50%);
+            }
+            &::after {
+                content: '活動已結束';
+                padding: 10px 20px;
+                border-radius: 4px;
+                background-color: lighten($red, 40);
+                color: $red;
+            }
+        }
+        &.upcoming {
+            &::before {
+                border-bottom: 15px solid lighten($orange, 40);
+            }
+            &::after {
+                content: '活動即將開始';
+                background-color: lighten($orange, 40);
+                color: $orange;
+            }
+        }
+        &.underway {
+            &::before {
+                border-bottom: 15px solid lighten($green, 40);
+            }
+            &::after {
+                content: '活動進行中';
+                background-color: lighten($green, 40);
+                color: $green;
+            }
+        }
+    }
+    .category {
+		position: relative;
+        color: $content-color;
+		&::before,
+		&::after {
+			content: '';
+			display: block;
+			position: absolute;
+			@include transform(translateX(50%) rotate(45deg));
+			right: 50%;
+			top: 130%;
+			z-index: -1;
+			border-top: 3px solid $primary-color;
+			width: 5rem;
+		}
+		&::after {
+			@include transform(translateX(50%) rotate(-45deg));
+		}
+    }
+    .info {
+        margin: 20px 0;
+    }
+    .info-item {
+        position: relative;
+        border-right: 2px solid $primary-color;
+    	min-height: 8rem;
+        span {
+            color: $content-color;
+            font-weight: bold;
+        }
+    	i {
+    		position: absolute;
+    		font-size: 8rem;
+    		right: 50%;
+    		color: rgba($primary-color, 0.12);
+    		z-index: -1;
+    		@include translateX(50%);
+            @include breakpoint(tablet) {
+                font-size: 8rem;
+            }
+            @include breakpoint(mobileonly) {
+                font-size: 6rem;
+            }
+    	}
+    	&:last-child {
+    		border-right: none;
+    	}
+        @include breakpoint(tablet) {
+            border: none;
+            margin-bottom: 10px;
+        }
+    }
+}
