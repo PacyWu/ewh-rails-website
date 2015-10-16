@@ -122,6 +122,7 @@
     }
 }
 
+/* Activity page */
 .activity-header {
     h1 {
         font-weight: bold;
@@ -223,5 +224,44 @@
             border: none;
             margin-bottom: 10px;
         }
+    }
+}
+
+.activity-bg {
+    @include background-image(linear-gradient(rgba($primary-color, 0.78),
+                                              rgba($primary-color, 0.54),
+                                              rgba(1, 1, 1, 0.78),
+											  rgba(1, 1, 1, 0.54),
+											  rgba(1, 1, 1, 0.38)), image-url('http://ewhcycu.org/images/activities/camps/butterflyeffect/info.jpg'));
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    padding: 20vh 0;
+    .slogan {
+        color: #fff;
+        &::before {
+            content: '\201F';
+            vertical-align: middle;
+            font-size: 10rem;
+        }
+        @include breakpoint(mobileonly) {
+            font-size: 24px;
+            &::before {
+                font-size: 8rem;
+            }
+        }
+    }
+}
+.activity-content {
+    background-color: $primary-color;
+    color: #fff;
+    h1 {
+        color: $title-color-with-bg;
+    }
+    .box {
+        padding: 0 2rem;
+        min-height: 18rem;
+        border: 1px solid #fff;
     }
 }
