@@ -1,0 +1,38 @@
+- @title = '小蝴蝶效應營隊'
+
+.container
+    ol.breadcrumb-list
+        li.breadcrumb-item
+            = link_to root_path do
+                i.fa.fa-home
+        li.breadcrumb-item
+            = link_to '活動總覽', activities_path
+        li.breadcrumb-item
+            = link_to '小蝴蝶效應營隊', activity_path(1), class: 'active'
+
+section
+    h1.sr-only 活動詳細
+    .container
+        article.activity-header.text-center
+            .row
+                .col-lg-12
+                    span.category.h2 營隊系列
+                    h1 小蝴蝶效應營隊
+                    span.status.underway
+            .row.info
+                .col-md-3.col-sm-6.info-item.wow.fadeInDown data-wow-delay="0.4s"
+                    i.fa.fa-calendar
+                    h3 時間
+                    h4 2014/06/10
+                .col-md-3.col-sm-6.info-item.wow.fadeInDown data-wow-delay="0.6s"
+                    i.fa.fa-map-marker
+                    h3 地點
+                    h4 中原大學工學館405
+                .col-md-3.col-sm-6.info-item.wow.fadeInDown data-wow-delay="0.8s"
+                    i.fa.fa-dollar
+                    h3 費用
+                    h4 免費
+                .col-md-3.col-sm-6.info-item.wow.fadeInDown data-wow-delay="1s"
+                    i.fa.fa-user
+                    h3 對象
+                    h4 中原大學醫工系學生
