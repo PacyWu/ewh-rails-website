@@ -58,3 +58,20 @@ section.activity-content
                         li 以科學小遊戲，由親自動手操作中引發小朋友對科學的熱情。
                         li 在各項團隊合作的遊戲中，使小朋友體會到團隊互助及尊重、禮讓的重要性。
                         li 以多元化的活動項目，開闊小朋友的視野。
+
+section.team
+    h1.text-center 參與人員
+    .container
+        .col-md-3.col-sm-4.team-img.wow.flipInY data-wow-delay="1s"
+            = image_tag 'http://ewhcycu.org/images/activities/lectures/nepal/member.jpg'
+            .mask-overlay
+                .title-overlay
+                    h2.h4 活動招集人
+                    h3 小朋友
+        - 5.times do |x|
+            .col-md-3.col-sm-4.team-img.wow.flipInY data-wow-delay="1.#{x}s"
+                = image_tag 'http://ewhcycu.org/images/activities/camps/butterflyeffect/member.jpg'
+                .mask-overlay
+                    .title-overlay
+                        h2.h4 活動策畫人
+                        h3 大朋友
