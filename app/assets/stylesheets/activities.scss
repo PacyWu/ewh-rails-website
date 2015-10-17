@@ -265,3 +265,17 @@
         border: 1px solid #fff;
     }
 }
+
+.announcements {
+    background-color: $primary-color;
+    min-height: 20rem;
+    color: #fff;
+    ul {
+        margin: 0 2rem;
+        li {
+            list-style: decimal;
+            font-size: $default-size;
+            line-height: $default-height;
+        }
+    }
+}
