@@ -20,7 +20,7 @@
 
 $(function(event){
 	new WOW().init();
-	
+
 	$('.nav-btn').on('click', function(){
 		$(this).toggleClass('active');
 		$('.main-nav').toggleClass('open');
@@ -35,6 +35,23 @@ $(function(event){
 	  js.src = "//connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v2.4";
 	  fjs.parentNode.insertBefore(js, fjs);
 	}(document, 'script', 'facebook-jssdk'));
+
+	(function(){
+		var qs,js,q,s,d = document,
+			gi = d.getElementById,
+			ce = d.createElement,
+			gt = d.getElementsByTagName,
+			id = 'typef_orm',
+			b = 'https://s3-eu-west-1.amazonaws.com/share.typeform.com/';
+			if(!gi.call(d,id)) {
+				js = ce.call(d,'script');
+				js.id = id;
+				js.src = b + 'widget.js';
+				q = gt.call(d,'script')[0];
+				q.parentNode.insertBefore(js,q)
+			}
+		}
+	)()
 
 	/* totop button toggle */
 	$(window).scroll(function(){
