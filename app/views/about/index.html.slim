@@ -1,0 +1,9 @@
+- @title = '關於我們'
+
+.container
+    ol.breadcrumb-list
+        li.breadcrumb-item
+            = link_to root_path do
+                i.fa.fa-home
+        li.breadcrumb-item
+            = link_to '關於我們', about_path, class: 'active'
