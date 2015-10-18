@@ -12,3 +12,62 @@
         text-indent: 0;
     }
 }
+
+
+.box {
+	display: block;
+	width: 100%;
+	max-width: 240px;
+	height: 140px;
+	padding: 1rem;
+	margin: 0 auto;
+	border-radius: 4px;
+	background-color: #ddd;
+	text-align: center;
+    font-size: 2rem;
+}
+
+/* Main */
+.sub-level {
+	@include column-count(2);
+    margin-top: 10px;
+	.member {
+		@include column-count(4);
+        margin-top: 10px;
+		@include breakpoint(phablet) {
+			@include column-count(1);
+			padding-left: 20px;
+			.box {
+				position: relative;
+				max-width: 220px;
+				&::before {
+					position: absolute;
+					content: '';
+					display: block;
+					border-style: solid;
+					border-color: transparent transparent $red $red;
+					border-width: 5px;
+					width: 100%;
+					height: 110%;
+					top: -60%;
+					left: -10px;
+					z-index: -1;
+				}
+			}
+		}
+	}
+}
+
+/* 各組上色 */
+.leader .box{
+	background-color: lighten($primary-color, 10);
+    color: darken($primary-color, 30);
+}
+.diplomatic .box {
+	background-color: lighten($orange, 10);
+    color: darken($orange, 30);
+}
+.internal-affairs .box {
+	background-color: lighten($green, 10);
+    color: darken($green, 30);
+}
