@@ -27,7 +27,6 @@
     font-size: 2rem;
 }
 
-/* Main */
 .sub-level {
 	@include column-count(2);
     margin-top: 10px;
@@ -58,7 +57,6 @@
 	}
 }
 
-/* 各組上色 */
 .leader .box{
 	background-color: lighten($primary-color, 10);
     color: darken($primary-color, 30);
@@ -70,4 +68,65 @@
 .internal-affairs .box {
 	background-color: lighten($green, 10);
     color: darken($green, 30);
+}
+
+.staff {
+    .bg {
+        position: relative;
+        margin: 10px auto;
+        border-style: solid;
+        border-color: $primary-color;
+        border-width: 0;
+        overflow: hidden;
+        border-width: 5px 0;
+        border-radius: 4px;
+        height: 360px;
+        width: 280px;
+        &::before {
+            content: '';
+            position: absolute;
+            background-image: image-url('http://www.transparenttextures.com/patterns/ice-age.png');
+            background-color: #fff;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            top: 0;
+            left: 0;
+        }
+    }
+    .content {
+        text-align: center;
+        .img {
+            position: relative;
+            overflow: hidden;
+            display: block;
+            border: 5px solid $primary-color;
+            border-radius: 50%;
+            background-color: rgba(#fff, 0.75);
+            margin: 25px auto;
+            padding-top: 75%;
+            width: 80%;
+            height: 0;
+            img {
+                position: absolute;
+                width: 120%;
+                left: -10%;
+                top: -40%;
+            }
+        }
+        h2::after {
+            content: '';
+            position: relative;
+            display: block;
+            height: 1px;
+            width: 25%;
+            top: 5px;
+            background-color: #000;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        h3 {
+            color: $content-color;
+        }
+    }
 }

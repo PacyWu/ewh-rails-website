@@ -55,3 +55,26 @@ section
     				.box 資訊作業部
     				.box 儀器作業部
     				.box 學務相關部
+
+section.staff
+    .container
+        h1.section-title.text-center 組織成員
+        .row
+            article.col-lg-12.categories
+                h1.sr-only 分類標籤
+                .category-list
+                    span.category-item.h4
+                        = link_to '2015', activities_path, class: 'active'
+                    span.category-item.h4
+                        = link_to '2014', activities_path
+        .row
+            article
+                h1.sr-only 成員名單
+                - 13.times do |x|
+                    .col-sm-6.col-lg-4
+                        .bg
+                          .content
+                            .img
+                              = image_tag 'http://ewhcycu.org/images/activities/camps/butterflyeffect/member.jpg'
+                            h2.h3 李建沂
+                            h3.h4 中原大學分會會長
