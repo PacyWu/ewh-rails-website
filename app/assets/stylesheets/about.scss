@@ -39,6 +39,7 @@
 			.box {
 				position: relative;
 				max-width: 220px;
+                margin-top: 10px;
 				&::before {
 					position: absolute;
 					content: '';
