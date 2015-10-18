@@ -42,10 +42,11 @@
 	}
 }
 
-.btn-more {
+a.btn-more,
+button.btn-more {
 	display: block;
 	font-weight: bold;
-	color: $primary-color;
+	color: $title-color-with-bg;
 	background-color: #fff;
 	border: 5px solid $primary-color;
 	margin: 20px auto 0;
