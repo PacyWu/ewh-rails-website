@@ -108,6 +108,9 @@
         padding: 2rem;
         color: $content-color;
         @include transition(all, 0.5s);
+        p {
+            @include text-clamp($default-size, 4, $default-height);
+        }
     }
     .btn {
         background-color: $primary-color;
