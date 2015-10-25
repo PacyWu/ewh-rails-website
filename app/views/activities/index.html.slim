@@ -39,33 +39,83 @@ section
             h1.sr-only 分類總覽
             .activity-list
                 .activity-item.col-lg-3.col-md-4.col-sm-6.wow.flipInY
-                    h3.title.text-center Design Spark
-                    span.h5.info.text-center.underway
-                        i.fa.fa-clock-o 2015/12/10
+                    h3.title.text-center 銲槍課程
+                    span.h5.info.text-center.expired
+                        i.fa.fa-clock-o 2014/03/28
                     .img
                         = image_tag 'http://ewhcycu.org/images/activities/courses/welding/info.jpg'
                     .content
                         p
-                            | 認識尼泊爾，探討尼泊爾當地公共衛生、基礎建設、教育資源的情況，思考個人能給予世界的回饋有哪些？
+                            | 大學生活帶給我們許多課本上的理論知識，而EWH想要提供的是跳脫書面的學問，將知識與實際操作結合，藉由有趣的焊接課程間接學習焊接的技巧、電路的布置，從親自動手做去引發學習的興趣。
+                        = link_to '活動詳細', activity_path(1), class: 'btn btn-block text-center'
+                .activity-item.col-lg-3.col-md-4.col-sm-6.wow.flipInY
+                    h3.title.text-center 認識基本電子元件
+                    span.h5.info.text-center.expired
+                        i.fa.fa-clock-o 2014/3/13
+                    .img
+                        = image_tag 'http://ewhcycu.org/images/activities/courses/electronicparts/info.jpg'
+                    .content
+                        p
+                            | 此次活動，是由社團幹部向組内成員做基本的電子元件介紹,將電子材料行採購作為最直接的教材，經由採購去熟悉並且認識基本電子元件，如：電容、電 阻、二極體以及麵包板。
+                        = link_to '活動詳細', activity_path(1), class: 'btn btn-block text-center'
+                .activity-item.col-lg-3.col-md-4.col-sm-6.wow.flipInY
+                    h3.title.text-center Design Spark
+                    span.h5.info.text-center.expired
+                        i.fa.fa-clock-o 2014/04/10
+                    .img
+                        = image_tag 'http://ewhcycu.org/images/activities/courses/designspark/info.jpg'
+                    .content
+                        p
+                            | 在醫工系的學習主科上經常接觸到電路的架構圖及計算，但從未思考過該如何製作一塊電路板或一張電路圖，我們藉由軟體設計DesignSpark經由佈線、設計電路圖進而去設計一塊專屬的自己的電路板。
+                        = link_to '活動詳細', activity_path(1), class: 'btn btn-block text-center'
+                .activity-item.col-lg-3.col-md-4.col-sm-6.wow.flipInY
+                    h3.title.text-center 世界接軌國際講座
+                    span.h5.info.text-center.expired
+                        i.fa.fa-clock-o 2015/4/16
+                    .img
+                        = image_tag 'http://ewhcycu.org/images/activities/lectures/linktheworld/info.jpg'
+                    .content
+                        p
+                            | 提升同學們對於國外環境的認識及促進彼此間的交流。
                         = link_to '活動詳細', activity_path(1), class: 'btn btn-block text-center'
                 .activity-item.col-lg-3.col-md-4.col-sm-6.wow.flipInY
                     h3.title.text-center 國際講座 謎樣國度尼泊爾
                     span.h5.info.text-center.expired
                         i.fa.fa-clock-o 2015/06/10
                     .img
-                        = image_tag 'http://ewhcycu.org/images/activities/camps/butterflyeffect/member.jpg'
+                        = image_tag 'http://ewhcycu.org/images/activities/lectures/nepal/info.jpg'
                     .content
                         p
-                            | 認識尼泊爾，探討尼泊爾當地公共衛生、基礎建設、教育資源的情況，思考個人能給予世界的回饋有哪些？認識尼泊爾，探討尼泊爾當地公共衛生、基礎建設、教育資源的情況，思考個人能給予世界的回饋有哪些？
+                            | 認識尼泊爾，探討尼泊爾當地公共衛生、基礎建設、教育資源的情況，思考個人能給予世界的回饋有哪些？
                         = link_to '活動詳細', activity_path(1), class: 'btn btn-block text-center'
-                - 10.times do |x|
-                    .activity-item.col-lg-3.col-md-4.col-sm-6.wow.flipInY data-wow-delay = "0.#{x}s"
-                        h3.title.text-center 小蝴蝶效應營隊
-                        span.h5.info.text-center.upcoming
-                            i.fa.fa-clock-o 2015/11/19
-                        .img
-                            = image_tag 'http://ewhcycu.org/images/activities/camps/butterflyeffect/info.jpg'
-                        .content
-                            p
-                                | 認識尼泊爾，探討尼泊爾當地公共衛生、基礎建設、教育資源的情況，思考個人能給予世界的回饋有哪些？
-                            = link_to '活動詳細', activity_path(1), class: 'btn btn-block text-center'
+                .activity-item.col-lg-3.col-md-4.col-sm-6.wow.flipInY
+                    h3.title.text-center  宜蘭長照中心參訪
+                    span.h5.info.text-center.expired
+                        i.fa.fa-clock-o 2014/5/24
+                    .img
+                        = image_tag 'http://ewhcycu.org/images/activities/visits/yilanltc/info.jpg'
+                    .content
+                        p
+                            | 此次參訪活動是由畢業校友開放自己經營的長照中心，提供給中原醫工的學生們做最直接的教學，不論在畢業後未來出路上的問題，亦或是要如何學以致用發揮長才，藉由學長自身的經歷，帶給我們的寶貴經驗是最大的收穫。
+                        = link_to '活動詳細', activity_path(1), class: 'btn btn-block text-center'
+                .activity-item.col-lg-3.col-md-4.col-sm-6.wow.flipInY
+                    h3.title.text-center 外交部參訪
+                    span.h5.info.text-center.expired
+                        i.fa.fa-clock-o 2014/11/26
+                    .img
+                        = image_tag 'http://ewhcycu.org/images/activities/visits/ministryofforeignafairs/info.png'
+                    .content
+                        p
+                            | 外交部參訪 2014年底我們世界衛生工程中原分會與國際事務研習社合辦參訪活動，除了到外交部進行參訪，了解內部構造及組織架構外，也到自來水博物館參訪，了解台灣自來水歷史及各項水利設施。
+                        = link_to '活動詳細', activity_path(1), class: 'btn btn-block text-center'
+                .activity-item.col-lg-3.col-md-4.col-sm-6.wow.flipInY
+                    h3.title.text-center  小蝴蝶效應營隊
+                    span.h5.info.text-center.expired
+                        i.fa.fa-clock-o 2015/2/02至2015/2/04
+                    .img
+                        = image_tag 'http://ewhcycu.org/images/activities/camps/butterflyeffect/info.jpg'
+                    .content
+                        p
+                            | EWH致力於給弱勢地區提供幫助，不僅致力於專業醫療知識上及技能上的發揮，在台灣，我們也不能忽視未來的主人翁，給予偏遠地區的孩童，提供一個免費的營隊，藉此營隊不僅帶給他們美好的回憶，更希望藉各種科學、美術、遊戲，使他們發揮小小的力量，將所學和身邊的人分享。
+                        = link_to '活動詳細', activity_path(1), class: 'btn btn-block text-center'
+
