@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
   root 'pages#index'
-  resources :activities, only: :index do
-    get '/:page', action: 'show', as: :static, on: :collection
-  end
+  resources :activities, only: :index
+  get 'activities/:page', to: 'activities#show', as: :static_activity
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
