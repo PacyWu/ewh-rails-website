@@ -3,6 +3,6 @@ class ActivitiesController < ApplicationController
     end
 
     def show
-      render template: "pages/#{params[:page]}"
+      render template: "activities/#{params[:page]}"
     end
 end
