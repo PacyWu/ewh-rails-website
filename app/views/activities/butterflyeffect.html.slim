@@ -8,7 +8,7 @@
         li.breadcrumb-item
             = link_to '活動總覽', activities_path
         li.breadcrumb-item
-            = link_to '小蝴蝶效應營隊', activity_path(1), class: 'active'
+            = link_to '小蝴蝶效應營隊', activity_path('butterflyeffect'), class: 'active'
 
 section
     h1.sr-only 活動資訊
@@ -18,16 +18,16 @@ section
                 .col-lg-12
                     span.category.h2 營隊系列
                     h1 小蝴蝶效應營隊
-                    span.status.underway
+                    span.status.expired
             .row.info
                 .col-md-3.col-sm-6.info-item.wow.fadeInDown data-wow-delay="0.4s"
                     i.fa.fa-calendar
                     h3 時間
-                    h4 2014/06/10
+                    h4 2015/2/02至2015/2/04
                 .col-md-3.col-sm-6.info-item.wow.fadeInDown data-wow-delay="0.6s"
                     i.fa.fa-map-marker
                     h3 地點
-                    h4 中原大學工學館405
+                    h4 中原大學懷恩樓105
                 .col-md-3.col-sm-6.info-item.wow.fadeInDown data-wow-delay="0.8s"
                     i.fa.fa-dollar
                     h3 費用
@@ -35,7 +35,7 @@ section
                 .col-md-3.col-sm-6.info-item.wow.fadeInDown data-wow-delay="1s"
                     i.fa.fa-user
                     h3 對象
-                    h4 中原大學醫工系學生
+                    h4 愛鄰社的小朋友
 
 .activity-bg
     p.h1.text-center.slogan.wow.flipInX data-wow-delay="1s" 從遊戲中邊玩邊學
@@ -68,13 +68,6 @@ section.team
                 .title-overlay
                     h2.h4 活動招集人
                     h3 小朋友
-        - 5.times do |x|
-            .col-md-3.col-sm-4.team-img.wow.flipInY data-wow-delay="1.#{x}s"
-                = image_tag 'http://ewhcycu.org/images/activities/camps/butterflyeffect/member.jpg'
-                .mask-overlay
-                    .title-overlay
-                        h2.h4 活動策畫人
-                        h3 大朋友
 
 section.announcements
     .container

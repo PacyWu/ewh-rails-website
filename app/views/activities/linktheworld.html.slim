@@ -1,0 +1,74 @@
+- @title = '世界接軌國際講座'
+
+.container
+    ol.breadcrumb-list
+        li.breadcrumb-item
+            = link_to root_path do
+                i.fa.fa-home
+        li.breadcrumb-item
+            = link_to '活動總覽', activities_path
+        li.breadcrumb-item
+            = link_to '世界接軌國際講座', activity_path('linktheworld'), class: 'active'
+
+section
+    h1.sr-only 活動資訊
+    .container
+        article.activity-header.text-center
+            .row
+                .col-lg-12
+                    span.category.h2 講座系列
+                    h1 世界接軌國際講座
+                    span.status.expired
+            .row.info
+                .col-md-3.col-sm-6.info-item.wow.fadeInDown data-wow-delay="0.4s"
+                    i.fa.fa-calendar
+                    h3 時間
+                    h4 2015/4/16(四) 07PM~09PM
+                .col-md-3.col-sm-6.info-item.wow.fadeInDown data-wow-delay="0.6s"
+                    i.fa.fa-map-marker
+                    h3 地點
+                    h4 中原大學科學館811
+                .col-md-3.col-sm-6.info-item.wow.fadeInDown data-wow-delay="0.8s"
+                    i.fa.fa-dollar
+                    h3 費用
+                    h4 免費
+                .col-md-3.col-sm-6.info-item.wow.fadeInDown data-wow-delay="1s"
+                    i.fa.fa-user
+                    h3 對象
+                    h4 所有中原大學學生
+
+.activity-bg
+    p.h1.text-center.slogan.wow.flipInX data-wow-delay="1s" 深入了解志工服務
+
+section.activity-content
+    .container
+        .row
+            h1.text-center.wow.fadeInUp data-wow-delay="1s" 活動介紹
+            .col-md-8.col-md-offset-2.wow.fadeInUp data-wow-delay="1s"
+                p 提升同學們對於國外環境的認識及促進彼此間的交流。
+        .row
+            article.col-md-6
+                .box.wow.fadeInUp data-wow-delay="1.5s"
+                    h1.h2 活動內容
+                    p 很多同學對國外志工服務有憧憬，想要先了解當地情況、生活形態及可能會遇到的事情。於是我們邀請了曾到德國及蒙古擔任志工的曾莉雯學姊，以及赴西班牙擔任志工的邱筱筑學姊來為我們分享當地的所見所聞和風土民情。
+            article.col-md-6
+                .box.wow.fadeInUp data-wow-delay="1.5s"
+                    h1.h2 活動大綱
+                    ol
+                        li 曾莉雯學姊分享赴德國及蒙古之志工心得
+                        li 邱筱筑學姊分享赴西班牙之志工心得
+                        li 問題討論，經驗交流
+
+section.announcements
+    .container
+        h1.text-center.wow.fadeInUp data-wow-delay="1s" 注意事項
+        .col-md-6.col-md-offset-3.wow.fadeInUp data-wow-delay="1.5s"
+            ul
+                li 帶著你的心一起來聽故事吧！
+                li 如有任何問題，歡迎與我們聯絡 ewhatcycu@gmail.com
+
+section.registration
+    .container.wow.fadeInUp data-wow-delay="1s"
+        h1.sr-only 線上報名
+        a.typeform-share.text-center.h1.btn-more href="https://s10244210.typeform.com/to/n4cB7T" data-mode="1" target="_blank"
+            | 報名活動
